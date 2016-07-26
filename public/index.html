@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello Cocos2d-JS</title> 
+    <script type="text/javascript" src="https://cdn.hyperdev.com/us-east-1%3A43f4502d-d955-437e-a51c-9bb06c64c179%2Fcocos2d-js-v3.12.js" charset="UTF-8"></script>
+    <script src="/src/resource.js" ></script>
+    <script src="/src/MyScene.js" ></script>
+</head>
+<body>   
+    <canvas id="gameCanvas" width="800" height="450"></canvas>
+    <script type="text/javascript">
+          window.onload = function(){
+              cc.game.onStart = function(){
+                  //load resources
+                  cc.LoaderScene.preload(g_resources, function () {
+                      cc.director.runScene(new MyScene());
+                  }, this);
+              };
+              cc.game.run("gameCanvas");
+          };
+    </script>
+</body>
+</html>
